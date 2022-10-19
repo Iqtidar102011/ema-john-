@@ -6,12 +6,12 @@ import './Header.css'
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
-    const navigate = useNavigate()
-    const handleLogOut = () => {
-        logOut();
-        navigate('/login')
+    // const navigate = useNavigate()
+    // // const handleLogOut = () => {
+    // //     logOut();
+    // //     navigate('/login')
 
-    }
+    // }
     return (
         <nav className='header'>
             <img src={logo} alt="" />
@@ -20,9 +20,10 @@ const Header = () => {
                 <Link to="/order">Orders</Link>
 
                 <Link to="/inventory">Manage Inventory</Link>
+                <Link to="/shipping">Shipping</Link>
                 {
                     user?.uid ?
-                        <button onClick={handleLogOut}>Log Out</button>
+                        <button onClick={logOut}>Log Out</button>
                         :
 
                         <>
